@@ -1,14 +1,14 @@
 # GSoC 2021 Final Submission
 ### Quick links of the contribution.
 
-* [Rocks-fs](https://github.com/Deepak123bharat/rocks-fs) stand-alone module for the filesystem. [link](https://github.com/Deepak123bharat/rocks-fs/commits/master)
-* [Rocks-dir](https://github.com/Deepak123bharat/rocks-dir) stand-alone module to handling pathnames. [link](https://github.com/Deepak123bharat/rocks-dir/commits/master)
-* [Rocks-fun](https://github.com/Deepak123bharat/rocks-fun) stand-alone module basic functional utilities. [link](https://github.com/Deepak123bharat/rocks-fun/commits/master)
-* [Rocks-patch](https://github.com/Deepak123bharat/rocks-patch) stand-alone module for patch utility to apply unified diffs. [link](https://github.com/Deepak123bharat/rocks-patch/commits/master)
-* [Rocks-tar](https://github.com/Deepak123bharat/rocks-tar) A pure-Lua implementation of untar. [link](https://github.com/Deepak123bharat/rocks-tar/commits/master)
-* [Rocks-zip](https://github.com/Deepak123bharat/rocks-zip) A Lua implementation of .zip and .gz file. [link](https://github.com/Deepak123bharat/rocks-zip/commits/master)
-* [Rocks-sysdetect](https://github.com/Deepak123bharat/rocks-sysdetect) stand-alone module for detecting operating system. [link](https://github.com/Deepak123bharat/rocks-sysdetect/commits/master)
-* [Luarocks-unit](https://github.com/Deepak123bharat/luarocks/tree/luarocks-unit) Luarocks branch which uses all the above stand-alone modules. [link](https://github.com/Deepak123bharat/luarocks/commits/luarocks-unit)
+* Rocks-fs [link](https://github.com/Deepak123bharat/rocks-fs/commits/master)
+* Rocks-dir [link](https://github.com/Deepak123bharat/rocks-dir/commits/master)
+* Rocks-fun [link](https://github.com/Deepak123bharat/rocks-fun/commits/master)
+* Rocks-patch [link](https://github.com/Deepak123bharat/rocks-patch/commits/master)
+* Rocks-tar [link](https://github.com/Deepak123bharat/rocks-tar/commits/master)
+* Rocks-zip [link](https://github.com/Deepak123bharat/rocks-zip/commits/master)
+* Rocks-sysdetect [link](https://github.com/Deepak123bharat/rocks-sysdetect/commits/master)
+* Luarocks-unit [link](https://github.com/Deepak123bharat/luarocks/commits/luarocks-unit)
 
 ## Table of Contents
 
@@ -23,7 +23,27 @@
 
 This project aims to split the Luarocks into more manageable chunks, making parts of it into libraries and providing a typed API for LuaRocks modules, specified using Teal, a typed dialect of Lua, which allows for typed definition files to be written for untyped Lua modules. Our goal here is not to port all of LuaRocks to Teal, but to provide typed interfaces for Teal or Lua applications, so that users of these interfaces can have a stable contract of the API's inputs and outputs. This project will help third-part applications drive LuaRocks easily.
 
+Flowchart of the API 
+
 <img border="0" src="https://github.com/Deepak123bharat/lablua-submission/blob/main/pic1.png">
+
+To split Luarocks into manageable chunks I have created stand-alone modules using the existing modules of luarocks
+
+Stand-alone modules separate Luarocks core from other Luarocks modules that can be reused in other applications. There are some modules like fs, sysdetect, patch, etc. We can use those modules in other Lua applications. It's easy to manage small modules. This is a good idea to creating separate repositories and publishing all those modules on [Luarocks](https://luarocks.org/). Modules extracted from the Luarocks are
+
+[Rocks-fs](https://github.com/Deepak123bharat/rocks-fs) File System Library for Lua.
+
+[Rocks-fun](https://github.com/Deepak123bharat/rocks-fun) A set of basic functional utilities.
+
+[Rocks-dir](https://github.com/Deepak123bharat/rocks-dir) Generic utilities for handling pathnames.
+
+[Rocks-patch](https://github.com/Deepak123bharat/rocks-patch) Patch utility to apply unified diffs.
+
+[Rocks-tar](https://github.com/Deepak123bharat/rocks-tar) A pure-Lua implementation of untar.
+
+[Rocks-zip](https://github.com/Deepak123bharat/rocks-zip) A Lua implementation of .zip and .gz file compression and decompression.
+
+[Rocks-sysdetect](https://github.com/Deepak123bharat/rocks-sysdetect) Module for detecting operating system.
 
  ## Installing modules using Luarocks. 
  
@@ -54,7 +74,7 @@ This project aims to split the Luarocks into more manageable chunks, making part
 ### What is done
  
  * [Luarocks-unit](https://github.com/Deepak123bharat/luarocks/tree/luarocks-unit) branch that uses all the stand-alone modules
- * Stand-alone modules separate Luarocks core from other Luarocks modules that can be reused in other applications. There are some modules like fs, sysdetect, patch, etc. We can use those modules in other Lua applications. It's easy to manage small modules. This is a good idea to creating separate repositories and publishing all those modules on [Luarocks](https://luarocks.org/). Modules extracted from the Luarocks are
+ * Stand-alone modules 
     * [rocks-fs](https://github.com/Deepak123bharat/rocks-fs)
     * [rocks-fun](https://github.com/Deepak123bharat/rocks-fun)
     * [rocks-dir](https://github.com/Deepak123bharat/rocks-dir)
