@@ -21,7 +21,7 @@
     
 ## Overview
 
-This project aims to split the Luarocks project into more manageable chunks, making parts of it into libraries and providing a typed API for LuaRocks modules, specified using Teal, a typed dialect of Lua. 
+This project aims to split the Luarocks into more manageable chunks, making parts of it into libraries and providing a typed API for LuaRocks modules, specified using Teal, a typed dialect of Lua, which allows for typed definition files to be written for untyped Lua modules. Our goal here is not to port all of LuaRocks to Teal, but to provide typed interfaces for Teal or Lua applications, so that users of these interfaces can have a stable contract of the API's inputs and outputs. This project will help third-part applications drive LuaRocks easily.
 
 <img border="0" src="https://github.com/Deepak123bharat/lablua-submission/blob/main/pic1.png">
 
@@ -54,16 +54,16 @@ This project aims to split the Luarocks project into more manageable chunks, mak
 ### What is done
  
  * [Luarocks-unit](https://github.com/Deepak123bharat/luarocks/tree/luarocks-unit) branch that uses all the stand-alone modules
- * Stand-alone modules 
+ * Stand-alone modules separate Luarocks core from other Luarocks modules that can be reused in other applications. There are some modules like fs, sysdetect, patch, etc. We can use those modules in other Lua applications. It's easy to manage small modules. This is a good idea to creating separate repositories and publishing all those modules on [Luarocks](https://luarocks.org/). Modules extracted from the Luarocks are
     * [rocks-fs](https://github.com/Deepak123bharat/rocks-fs)
-    * [procks-fun](https://github.com/Deepak123bharat/rocks-fun)
+    * [rocks-fun](https://github.com/Deepak123bharat/rocks-fun)
     * [rocks-dir](https://github.com/Deepak123bharat/rocks-dir)
     * [rocks-patch](https://github.com/Deepak123bharat/rocks-patch)
     * [rocks-tar](https://github.com/Deepak123bharat/rocks-tar)
     * [rocks-zip](https://github.com/Deepak123bharat/rocks-zip)
     * [rocks-sysdetect](https://github.com/Deepak123bharat/rocks-sysdetect)
  * Unit Testing With Busted for all the stand alone modules and luarocks-unit branch
- * Type definitions for the libraries
+ * Type definitions for all the modules.
  * Continuous Integration using [AppVeyor](https://www.appveyor.com/) and [Travis](https://travis-ci.com/) for all the modules and luarocks-unit 
 
       Stand-alone Modules | Travis | AppVeyor
